@@ -11,6 +11,8 @@ import {
   ClipboardList,
   LogOut,
   Wifi,
+  Wrench,
+  Network,
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { LanguageToggle } from '@/components/LanguageToggle';
@@ -22,6 +24,8 @@ const navItems = [
   { key: 'reports', icon: FileText, path: '/reports', roles: ['owner'] },
   { key: 'expenses', icon: CreditCard, path: '/expenses', roles: ['owner'] },
   { key: 'auditLog', icon: ClipboardList, path: '/audit', roles: ['owner'] },
+  { key: 'maintenance', icon: Wrench, path: '/maintenance', roles: ['owner', 'guard'] },
+  { key: 'network', icon: Network, path: '/network', roles: ['owner', 'guard'] },
   { key: 'settings', icon: Settings, path: '/settings', roles: ['owner'] },
 ];
 

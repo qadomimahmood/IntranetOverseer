@@ -83,3 +83,42 @@ export interface MonthlyOverview {
   partialCount: number;
   unpaidCount: number;
 }
+
+export type MaintenanceStatus = 'open' | 'in-progress' | 'resolved' | 'cancelled';
+export type MaintenancePriority = 'low' | 'medium' | 'high' | 'urgent';
+
+export interface MaintenanceRequest {
+  id: string;
+  title: string;
+  description: string;
+  studioId?: string; // Optional because it might be a general building issue
+  priority: MaintenancePriority;
+  status: MaintenanceStatus;
+  reportedBy: string; // User ID or Name
+  reportedAt: string;
+  assignedTo?: string; // Name of person handling it
+  resolvedAt?: string;
+}
+
+export interface Router {
+  id: string;
+  floor: number;
+  location: string;
+  status: 'online' | 'offline' | 'maintenance';
+  model: string;
+  ipAddress: string;
+  connectedDevices: number;
+  uptime: string;
+}
+
+export interface BandwidthUsage {
+  id: string;
+  studioId: string;
+  studioNumber: string;
+  subscriberName?: string;
+  uploadGB: number;
+  downloadGB: number;
+  totalGB: number;
+  limitGB: number;
+  status: 'normal' | 'warning' | 'critical';
+}

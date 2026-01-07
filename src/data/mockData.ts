@@ -1,4 +1,55 @@
-import { Studio, Subscriber, MonthlySubscription, PaymentRecord, AuditLogEntry, Expense } from '@/types';
+import { Studio, Subscriber, MonthlySubscription, PaymentRecord, AuditLogEntry, Expense, MaintenanceRequest, Router, BandwidthUsage } from '@/types';
+
+export const mockRouters: Router[] = [
+  { id: 'rt1', floor: 1, location: 'Lobby & F1', status: 'online', model: 'UniFi AP AC Pro', ipAddress: '192.168.1.10', connectedDevices: 12, uptime: '14d 2h' },
+  { id: 'rt2', floor: 2, location: 'Floor 2 Hallway', status: 'online', model: 'UniFi AP AC Pro', ipAddress: '192.168.1.20', connectedDevices: 8, uptime: '14d 2h' },
+  { id: 'rt3', floor: 3, location: 'Floor 3 Hallway', status: 'maintenance', model: 'UniFi AP AC Pro', ipAddress: '192.168.1.30', connectedDevices: 0, uptime: '0m' },
+  { id: 'rt4', floor: 4, location: 'Floor 4 Hallway', status: 'online', model: 'UniFi AP AC Pro', ipAddress: '192.168.1.40', connectedDevices: 15, uptime: '3d 5h' },
+  { id: 'rt5', floor: 5, location: 'Floor 5 Hallway', status: 'online', model: 'UniFi AP AC Pro', ipAddress: '192.168.1.50', connectedDevices: 9, uptime: '45d 1h' },
+  { id: 'rt6', floor: 6, location: 'Floor 6 Hallway', status: 'offline', model: 'UniFi AP AC Pro', ipAddress: '192.168.1.60', connectedDevices: 0, uptime: '0m' },
+];
+
+export const mockBandwidthUsage: BandwidthUsage[] = [
+  { id: 'bw1', studioId: 's401', studioNumber: '401', subscriberName: 'Hassan Nabil', uploadGB: 50, downloadGB: 450, totalGB: 500, limitGB: 1000, status: 'normal' },
+  { id: 'bw2', studioId: 's603', studioNumber: '603', subscriberName: 'Yasmin Tamer', uploadGB: 120, downloadGB: 1100, totalGB: 1220, limitGB: 1000, status: 'critical' },
+  { id: 'bw3', studioId: 's101', studioNumber: '101', subscriberName: 'Ahmed Hassan', uploadGB: 10, downloadGB: 40, totalGB: 50, limitGB: 500, status: 'normal' },
+  { id: 'bw4', studioId: 's204', studioNumber: '204', subscriberName: 'Youssef Ahmed', uploadGB: 80, downloadGB: 800, totalGB: 880, limitGB: 1000, status: 'warning' },
+  { id: 'bw5', studioId: 's302', studioNumber: '302', subscriberName: 'Omar Farouk', uploadGB: 5, downloadGB: 20, totalGB: 25, limitGB: 500, status: 'normal' },
+];
+
+export const mockMaintenanceRequests: MaintenanceRequest[] = [
+  {
+    id: 'mr1',
+    title: 'Leaky Faucet',
+    description: 'Kitchen faucet is dripping constantly.',
+    studioId: 's101',
+    priority: 'medium',
+    status: 'open',
+    reportedBy: 'Ahmed Hassan',
+    reportedAt: '2024-12-28T10:00:00',
+  },
+  {
+    id: 'mr2',
+    title: 'Elevator Noise',
+    description: 'Strange grinding noise when elevator stops at 3rd floor.',
+    priority: 'high',
+    status: 'in-progress',
+    reportedBy: 'Guard',
+    assignedTo: 'Tech Services Co.',
+    reportedAt: '2024-12-25T14:30:00',
+  },
+  {
+    id: 'mr3',
+    title: 'Broken Light Bulb',
+    description: 'Hallway light on 2nd floor.',
+    priority: 'low',
+    status: 'resolved',
+    reportedBy: 'Guard',
+    assignedTo: 'Ahmed (Guard)',
+    reportedAt: '2024-12-20T09:00:00',
+    resolvedAt: '2024-12-20T11:00:00',
+  },
+];
 
 export const mockExpenses: Expense[] = [
   {
