@@ -49,6 +49,18 @@ const translations: Record<Language, Record<string, string>> = {
     'nav.reports': 'Reports',
     'nav.settings': 'Settings',
     'nav.auditLog': 'Audit Log',
+    'nav.expenses': 'Expenses',
+
+    // Expenses
+    'expenses.title': 'Expenses Management',
+    'expenses.add': 'Add Expense',
+    'expenses.category': 'Category',
+    'expenses.description': 'Description',
+    'expenses.cat.maintenance': 'Maintenance',
+    'expenses.cat.utilities': 'Utilities',
+    'expenses.cat.cleaning': 'Cleaning',
+    'expenses.cat.supplies': 'Supplies',
+    'expenses.cat.other': 'Other',
 
     // Roles
     'role.owner': 'Owner',
@@ -158,6 +170,18 @@ const translations: Record<Language, Record<string, string>> = {
     'nav.reports': 'التقارير',
     'nav.settings': 'الإعدادات',
     'nav.auditLog': 'سجل التدقيق',
+    'nav.expenses': 'المصروفات',
+
+    // Expenses
+    'expenses.title': 'إدارة المصروفات',
+    'expenses.add': 'إضافة مصروف',
+    'expenses.category': 'الفئة',
+    'expenses.description': 'الوصف',
+    'expenses.cat.maintenance': 'صيانة',
+    'expenses.cat.utilities': 'فواتير ومرافق',
+    'expenses.cat.cleaning': 'نظافة',
+    'expenses.cat.supplies': 'مستلزمات',
+    'expenses.cat.other': 'أخرى',
 
     // Roles
     'role.owner': 'المالك',

@@ -2,6 +2,19 @@ export type StudioStatus = 'vacant' | 'active' | 'stopped';
 export type SubscriberStatus = 'active' | 'stopped' | 'left';
 export type PaymentStatus = 'paid' | 'partial' | 'unpaid';
 
+export type ExpenseCategory = 'maintenance' | 'utilities' | 'cleaning' | 'supplies' | 'other';
+export type ExpenseStatus = 'paid' | 'pending';
+
+export interface Expense {
+  id: string;
+  title: string;
+  category: ExpenseCategory;
+  amount: number;
+  date: string;
+  status: ExpenseStatus;
+  description?: string;
+}
+
 export interface Studio {
   id: string;
   studioNumber: string;

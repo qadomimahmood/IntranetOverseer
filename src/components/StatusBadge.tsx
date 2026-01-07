@@ -3,9 +3,10 @@ import { cn } from '@/lib/utils';
 
 type PaymentStatus = 'paid' | 'partial' | 'unpaid';
 type StudioStatus = 'vacant' | 'active' | 'stopped';
+type ExpenseStatus = 'paid' | 'pending';
 
 interface StatusBadgeProps {
-  status: PaymentStatus | StudioStatus;
+  status: PaymentStatus | StudioStatus | ExpenseStatus;
   className?: string;
 }
 
@@ -43,6 +44,11 @@ export function StatusBadge({ status, className }: StatusBadgeProps) {
         return {
           label: t('studios.vacant'),
           className: 'status-vacant',
+        };
+      case 'pending':
+        return {
+          label: 'Pending',
+          className: 'status-partial', // Re-using partial style for pending
         };
       default:
         return {

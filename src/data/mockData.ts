@@ -1,4 +1,43 @@
-import { Studio, Subscriber, MonthlySubscription, PaymentRecord, AuditLogEntry } from '@/types';
+import { Studio, Subscriber, MonthlySubscription, PaymentRecord, AuditLogEntry, Expense } from '@/types';
+
+export const mockExpenses: Expense[] = [
+  {
+    id: 'exp1',
+    title: 'Elevator Maintenance',
+    category: 'maintenance',
+    amount: 500,
+    date: '2024-12-10',
+    status: 'paid',
+    description: 'Quarterly elevator checkup',
+  },
+  {
+    id: 'exp2',
+    title: 'Electricity Bill',
+    category: 'utilities',
+    amount: 1200,
+    date: '2024-12-05',
+    status: 'paid',
+    description: 'Common areas electricity',
+  },
+  {
+    id: 'exp3',
+    title: 'Cleaning Service',
+    category: 'cleaning',
+    amount: 300,
+    date: '2024-12-15',
+    status: 'paid',
+    description: 'Building weekly cleaning',
+  },
+  {
+    id: 'exp4',
+    title: 'Plumbing Repair',
+    category: 'maintenance',
+    amount: 150,
+    date: '2024-12-20',
+    status: 'pending',
+    description: 'Fixing leak in lobby',
+  },
+];
 
 // Generate studios for 6 floors (e.g., 4 studios per floor)
 export const mockStudios: Studio[] = [
@@ -162,7 +201,7 @@ export const mockAuditLog: AuditLogEntry[] = [
 
 export function getMonthlyOverview(month: string) {
   const subscriptions = mockMonthlySubscriptions.filter(s => s.month === month);
-  
+
   return {
     month,
     totalExpected: subscriptions.reduce((sum, s) => sum + s.amountDue, 0),

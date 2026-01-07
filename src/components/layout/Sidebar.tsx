@@ -20,6 +20,7 @@ const navItems = [
   { key: 'studios', icon: Building2, path: '/studios', roles: ['owner', 'guard'] },
   { key: 'payments', icon: CreditCard, path: '/payments', roles: ['owner', 'guard'] },
   { key: 'reports', icon: FileText, path: '/reports', roles: ['owner'] },
+  { key: 'expenses', icon: CreditCard, path: '/expenses', roles: ['owner'] },
   { key: 'auditLog', icon: ClipboardList, path: '/audit', roles: ['owner'] },
   { key: 'settings', icon: Settings, path: '/settings', roles: ['owner'] },
 ];
